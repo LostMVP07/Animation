@@ -9,6 +9,7 @@
       margin: 0;
       padding: 0;
       background-color: black;
+      font-family: Arial, sans-serif; /* Added a fallback font */
     }
   
     .block {
@@ -16,11 +17,12 @@
       justify-content: center;
       align-items: center;
       color: white;
-      font-size: 12em;
+      font-size: 6em; /* Adjusted font size for smaller screens */
       position: relative;
       margin: 10% auto 0;
-      width: 50%;
-      height: 400px;
+      width: 80%; /* Adjusted width for smaller screens */
+      max-width: 600px; /* Added max-width for larger screens */
+      height: 300px; /* Adjusted height for smaller screens */
       background: linear-gradient(0deg, black, rgb(44, 43, 43));
       overflow: hidden; /* Clip overflow to hide glow outside */
     }
@@ -72,6 +74,21 @@
     /* Apply animation to text */
     .glow {
       animation: textGlow 10s linear infinite alternate;
+    }
+  
+    /* Media Queries */
+    @media screen and (max-width: 768px) {
+      .block {
+        font-size: 4em; /* Adjust font size for smaller screens */
+        height: 250px; /* Adjust height for smaller screens */
+      }
+    }
+  
+    @media screen and (max-width: 480px) {
+      .block {
+        font-size: 3em; /* Further adjust font size for smaller screens */
+        height: 200px; /* Further adjust height for smaller screens */
+      }
     }
   </style>
 </head>
